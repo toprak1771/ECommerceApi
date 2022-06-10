@@ -19,7 +19,8 @@ namespace _StarbucksApi.Data
                     context.Categories.AddRange(
                         new Category() { CategoryName="Coffee Beans"},
                         new Category() { CategoryName = "Tea Box" },
-                        new Category() { CategoryName = "Peripherals" }
+                        new Category() { CategoryName = "Peripherals" },
+                        new Category() { CategoryName="Soğuk Kahve"}
                         );
                 };
                 await context.SaveChangesAsync();
@@ -32,7 +33,8 @@ namespace _StarbucksApi.Data
                         new Product() {  ProductName = "Hibiscus Tea", Description = "Bu çay, hatmi çiçeği ve elmanın sulu mayhoşluğunu, turunçgil tadı içeren limon otuyla birleştirerek çekici bir baz oluşturur. ", AddTime = DateTime.Now.AddDays(-5), Price = 50, CategoryId = 2 },
                         new Product() {  ProductName = "Youthberry Tea", Description = " Ananas, mango ve acai çileği aromalarına sahip bitki çay", AddTime = DateTime.Now.AddDays(-20), Price = 70, CategoryId = 2 },
                         new Product() {  ProductName = "Satrbucks Seri Desenli Termos", Description = " Starbucks®  yeşil renkli, desenli, plastik termos / 473ml / 16oz, Ürünlerin kullanım talimatları farklılık gösterebilmektedir.", AddTime = DateTime.Now.AddDays(-17), Price = 699, CategoryId = 3 },
-                        new Product() {  ProductName = "Coffee Press", Description = "Kullanılacak çekirdek kahve Coffee Press ölçüsünde öğütülmelidir. ", AddTime = DateTime.Now.AddDays(-18), Price = 100, CategoryId = 3}
+                        new Product() {  ProductName = "Coffee Press", Description = "Kullanılacak çekirdek kahve Coffee Press ölçüsünde öğütülmelidir. ", AddTime = DateTime.Now.AddDays(-18), Price = 100, CategoryId = 3},
+                        new Product() { ProductName = "Coffee Press V2", Description = "Kullanılacak çekirdek kahve Coffee Press ölçüsünde öğütülmelidir. ", AddTime = DateTime.Now.AddDays(-18), Price = 100, CategoryId = 4 }
                         );  
                 };
                 await context.SaveChangesAsync();
@@ -45,7 +47,8 @@ namespace _StarbucksApi.Data
                         new Comment() {  UserName = "Kadir", Text = "Çok güzel", ProductId = 3 },
                         new Comment() {  UserName = "Merve", Text = "Çok güzel", ProductId = 4 },
                         new Comment() {  UserName = "Nur", Text = "Çok güzel", ProductId = 5 },
-                        new Comment() {  UserName = "Emir", Text = "Çok güzel", ProductId = 6 }
+                        new Comment() {  UserName = "Emir", Text = "Çok güzel", ProductId = 6 },
+                        new Comment() { UserName = "Yeliz", Text = "Çok güzel", ProductId = 7 }
                         );
                 };
                 await context.SaveChangesAsync();

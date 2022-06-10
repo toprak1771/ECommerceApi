@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace _StarbucksApi.Entities
@@ -14,6 +15,7 @@ namespace _StarbucksApi.Entities
         public string Text { get; set; }
 
         public int ProductId { get; set; }
+        [JsonIgnore]
         public Product Product { get; set; }
     }
 }
