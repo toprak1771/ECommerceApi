@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace _StarbucksApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]s")]
     [ApiController]
     public class CategoryController : ControllerBase
     {
