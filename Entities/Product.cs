@@ -12,11 +12,12 @@ namespace _StarbucksApi.Entities
         {
             Comments = new List<Comment>();
         }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int Id { get; set; }
         public string ProductName { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+        public string Imgsource { get; set; }
         public DateTime AddTime { get; set; }
         public List<Comment> Comments { get; set; }
 

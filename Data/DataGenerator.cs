@@ -17,10 +17,10 @@ namespace _StarbucksApi.Data
                 if (context.Categories.Count()==0) 
                 {
                     context.Categories.AddRange(
-                        new Category() { CategoryName="Coffee Beans"},
-                        new Category() { CategoryName = "Tea Box" },
-                        new Category() { CategoryName = "Peripherals" },
-                        new Category() { CategoryName="Soğuk Kahve"}
+                        new Category() { CategoryName="Coffee Beans", Imgsource="/Files/Images/coffeebeans.jpg"},
+                        new Category() { CategoryName = "Tea Box", Imgsource="/Files/Images/teabox.jpg" },
+                        new Category() { CategoryName = "Peripherals", Imgsource="/Files/Images/teabox.jpg" }
+                        
                         );
                 };
                 await context.SaveChangesAsync();
@@ -28,13 +28,13 @@ namespace _StarbucksApi.Data
                 if (context.Products.Count() == 0) 
                 {
                     context.Products.AddRange(
-                        new Product() { ProductName="Blonde Espresso Roast",Description= "Yoğun ve zengin aromalar ile karamelsi bir tatlılık ", AddTime=DateTime.Now.AddDays(-17),Price=180,CategoryId=1 },
-                        new Product() {  ProductName = "Veranda Blend", Description = " Yumuşak kakao  ve hafif kavrulmuş fındık nüansları", AddTime = DateTime.Now.AddDays(-10), Price = 85, CategoryId = 1 },
-                        new Product() {  ProductName = "Hibiscus Tea", Description = "Bu çay, hatmi çiçeği ve elmanın sulu mayhoşluğunu, turunçgil tadı içeren limon otuyla birleştirerek çekici bir baz oluşturur. ", AddTime = DateTime.Now.AddDays(-5), Price = 50, CategoryId = 2 },
-                        new Product() {  ProductName = "Youthberry Tea", Description = " Ananas, mango ve acai çileği aromalarına sahip bitki çay", AddTime = DateTime.Now.AddDays(-20), Price = 70, CategoryId = 2 },
-                        new Product() {  ProductName = "Starbucks Seri Desenli Termos", Description = " Starbucks®  yeşil renkli, desenli, plastik termos / 473ml / 16oz, Ürünlerin kullanım talimatları farklılık gösterebilmektedir.", AddTime = DateTime.Now.AddDays(-17), Price = 699, CategoryId = 3 },
-                        new Product() {  ProductName = "Coffee Press", Description = "Kullanılacak çekirdek kahve Coffee Press ölçüsünde öğütülmelidir. ", AddTime = DateTime.Now.AddDays(-18), Price = 100, CategoryId = 3},
-                        new Product() { ProductName = "Coffee Press V2", Description = "Kullanılacak çekirdek kahve Coffee Press ölçüsünde öğütülmelidir. ", AddTime = DateTime.Now.AddDays(-18), Price = 100, CategoryId = 4 }
+                        new Product() { ProductName="Blonde Espresso Roast",Description= "Yoğun ve zengin aromalar ile karamelsi bir tatlılık ", AddTime=DateTime.Now.AddDays(-17),Price=180,CategoryId=1, Imgsource="/Files/Images/blonderoast.jpg" },
+                        new Product() {  ProductName = "Veranda Blend", Description = " Yumuşak kakao  ve hafif kavrulmuş fındık nüansları", AddTime = DateTime.Now.AddDays(-10), Price = 85, CategoryId = 1, Imgsource="/Files/Images/verandeblend.jpg" },
+                        new Product() {  ProductName = "Hibiscus Tea", Description = "Bu çay, hatmi çiçeği ve elmanın sulu mayhoşluğunu, turunçgil tadı içeren limon otuyla birleştirerek çekici bir baz oluşturur. ", AddTime = DateTime.Now.AddDays(-5), Price = 50, CategoryId = 2,Imgsource="/Files/Images/hibiscustea.jpg" },
+                        new Product() { ProductName = "Youthberry Tea", Description = " Ananas, mango ve acai çileği aromalarına sahip bitki çay", AddTime = DateTime.Now.AddDays(-20), Price = 70, CategoryId = 2, Imgsource="/Files/Images/youthperytea.jpg" },
+                        new Product() {  ProductName = "Starbucks Seri Desenli Termos", Description = " Starbucks®  yeşil renkli, desenli, plastik termos / 473ml / 16oz, Ürünlerin kullanım talimatları farklılık gösterebilmektedir.", AddTime = DateTime.Now.AddDays(-17), Price = 699, CategoryId = 3,Imgsource="/Files/Images/seridesenlitermos.jpg" },
+                        new Product() {  ProductName = "Coffee Press", Description = "Kullanılacak çekirdek kahve Coffee Press ölçüsünde öğütülmelidir. ", AddTime = DateTime.Now.AddDays(-18), Price = 100, CategoryId = 3,Imgsource="/files/Images/filtrekahve.jpg"}
+                        
                         );  
                 };
                 await context.SaveChangesAsync();
@@ -42,17 +42,27 @@ namespace _StarbucksApi.Data
                 if (context.Comments.Count() == 0) 
                 {
                     context.Comments.AddRange(
-                        new Comment() { UserName = "Toprak", Text = "Kahvele bizi Starbuckscı çocuk", ProductId = 1 },
+                        new Comment() {  UserName = "Toprak", Text = "Kahvele bizi Starbuckscı çocuk", ProductId = 1 },
                         new Comment() {  UserName = "Murat", Text = "Çok güzel", ProductId = 2 },
                         new Comment() {  UserName = "Kadir", Text = "Çok güzel", ProductId = 3 },
                         new Comment() {  UserName = "Merve", Text = "Çok güzel", ProductId = 4 },
                         new Comment() {  UserName = "Nur", Text = "Çok güzel", ProductId = 5 },
-                        new Comment() {  UserName = "Emir", Text = "Çok güzel", ProductId = 6 },
-                        new Comment() { UserName = "Yeliz", Text = "Çok güzel", ProductId = 7 }
+                        new Comment() {  UserName = "Emir", Text = "Çok güzel", ProductId = 6 }
+                        
                         );
                 };
                 await context.SaveChangesAsync();
-            }
+
+                if(context.Users.Count() == 0) 
+                {
+                    context.Users.AddRange(
+                        new User() {FullName="toprak",Email="toprak@hotmail.com",Password="123456",Role=Enums.UserRole.USER },
+                        new User() { FullName = "ece", Email = "ece@hotmail.com", Password = "654321", Role = Enums.UserRole.USER },
+                        new User() {  FullName = "merve", Email = "merve@hotmail.com", Password = "987654", Role = Enums.UserRole.ADMIN }
+                        );
+                };
+                await context.SaveChangesAsync();
+           }
         }
     }
 }

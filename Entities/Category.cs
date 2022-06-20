@@ -13,9 +13,10 @@ namespace _StarbucksApi.Entities
             Products = new List<Product>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int Id { get; set; }
         public string CategoryName { get; set; }
+        public string Imgsource { get; set; }
         public List<Product> Products { get; set; }
 
     }
