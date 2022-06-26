@@ -58,7 +58,7 @@ namespace _StarbucksApi.Data
                     context.Users.AddRange(
                         new User() {FullName="toprak",Email="toprak@hotmail.com",Password="123456",Role=Enums.UserRole.USER },
                         new User() { FullName = "ece", Email = "ece@hotmail.com", Password = "654321", Role = Enums.UserRole.USER },
-                        new User() {  FullName = "merve", Email = "merve@hotmail.com", Password = "987654", Role = Enums.UserRole.ADMIN }
+                        
                         );
                 };
                 await context.SaveChangesAsync();
