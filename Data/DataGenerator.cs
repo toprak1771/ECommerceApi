@@ -17,9 +17,9 @@ namespace _StarbucksApi.Data
                 if (context.Categories.Count() == 0)
                 {
                     context.Categories.AddRange(
-                        new Category() { CategoryName = "Coffee Beans", Imgsource = "/Files/Images/coffeebeans.jpg" },
-                        new Category() { CategoryName = "Tea Box", Imgsource = "/Files/Images/teabox.jpg" },
-                        new Category() { CategoryName = "Peripherals", Imgsource = "/Files/Images/teabox.jpg" }
+                        new Category() { CategoryName = "Coffee Beans", Imgsource = "https://www.ubuy.com.tr/productimg/?image=aHR0cHM6Ly9tLm1lZGlhLWFtYXpvbi5jb20vaW1hZ2VzL0kvODE3Qzh6V20xWkwuX1NMMTUwMF8uanBn.jpg" },
+                        new Category() { CategoryName = "Tea Box", Imgsource = "https://cf.shopee.ph/file/5f5e1e3918f18653b7dd7fe8a1b5e815" },
+                        new Category() { CategoryName = "Peripherals", Imgsource = "https://media.karousell.com/media/photos/products/2021/10/25/starbucks_accessories_new_piec_1635148226_d33911df.jpg" }
 
                         );
                 };

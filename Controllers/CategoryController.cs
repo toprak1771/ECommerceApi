@@ -31,6 +31,7 @@ namespace _StarbucksApi.Controllers
                 .Select(p=>new CategoryGetViewModel() { 
                         Id=p.Id,    
                         CategoryName=p.CategoryName,
+                        ImgSource=p.Imgsource,
                         Products=p.Products
                        }).ToListAsync();
             return Ok(categoriesList);
@@ -45,6 +46,7 @@ namespace _StarbucksApi.Controllers
                 {
                     Id = p.Id,
                     CategoryName = p.CategoryName,
+                    ImgSource=p.Imgsource,
                     Products = p.Products
                 }).SingleOrDefaultAsync();
             return Ok(category);

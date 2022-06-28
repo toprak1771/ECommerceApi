@@ -11,6 +11,7 @@ namespace _StarbucksApi.ViewModels
         public int Id { get; set; }
         public string ProductName { get; set; }
         public string Description { get; set; }
+        public string ImgSource { get; set; }
         public DateTime AddTime { get; set; }
         public double Price { get; set; }
         public List<Comment> Comments { get; set; }
